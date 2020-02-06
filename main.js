@@ -1,21 +1,20 @@
 
 const myArray = [100, 1, 200, 2, 300, 3, 200];
 //example filter() method creates a new array with all elements that pass the test implemented by the provided function.
-function myFilter(array, condition) {
-    const result = [];
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        if (condition(element, i)) {
-            result.push(element);
-        }
-    }
-    return result;
-}
-const filtered = myFilter(myArray, (num) => num < 100);
+// function myFilter(array, condition) {
+//     const result = [];
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         if (condition(element, i)) {
+//             result.push(element);
+//         }
+//     }
+//     return result;
+// }
+// const filtered = myFilter(myArray, (num) => num < 100);
 // console.log(filtered);
 
 // forEach() method executes a provided function once for each array element.
-
 const myForEach = (array, execute) => {
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
@@ -23,7 +22,8 @@ const myForEach = (array, execute) => {
     }
 }
 const consoleLogThis = (item) => console.log(item);
-// myForEach(myArray, consoleLogThis)
+console.log("----------forEach()----------")
+myForEach(myArray, consoleLogThis)
 
 // map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
 const myMap = (array, change) => {
@@ -37,7 +37,8 @@ const myMap = (array, change) => {
 }
 const add20 = (num) => num + 20;
 const mappedArray = myMap(myArray, add20);
-// console.log("map", mappedArray);
+console.log("----------map()----------")
+console.log("map", mappedArray);
 
 // includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
 const myIncludes = (array, include) => {
@@ -54,10 +55,11 @@ const myIncludes = (array, include) => {
 
     return inArray;
 }
+console.log("----------includes()----------")
 const doesInclude = myIncludes(myArray, 100)
-// console.log(doesInclude)
+console.log(doesInclude)
 const doesNotInclude = myIncludes(myArray, 40)
-// console.log(doesNotInclude)
+console.log(doesNotInclude)
 
 
 // some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
@@ -71,10 +73,11 @@ const mySome = (array, condition) => {
     }
     return result;
 }
+console.log("----------some()----------")
 const divisibleBy2 = num => num % 2 === 0;
-// console.log(mySome(myArray, divisibleBy2));
+console.log(mySome(myArray, divisibleBy2));
 const greaterThan1000 = num => num > 1000;
-// console.log(mySome(myArray, greaterThan1000));
+console.log(mySome(myArray, greaterThan1000));
 
 
 // every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
@@ -94,9 +97,10 @@ const myEvery = (array, condition) => {
         return false;
     }
 }
-// console.log(myEvery(myArray, divisibleBy2)) 
+console.log("----------every()----------")
+console.log(myEvery(myArray, divisibleBy2)) 
 const divisibleBy1 = num => num % 1 === 0;
-// console.log(myEvery(myArray, divisibleBy1)) 
+console.log(myEvery(myArray, divisibleBy1)) 
 
 // find() method returns the value of the first element in the provided array that satisfies the provided testing function.
 const myFind = (array, condition) => {
@@ -108,7 +112,8 @@ const myFind = (array, condition) => {
         }
     }
 }
-// console.log(myFind(myArray, divisibleBy2))
+console.log("----------find()----------")
+console.log(myFind(myArray, divisibleBy2))
 
 // indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
 const myIndexOf = (array, indexOf) => {
@@ -125,9 +130,9 @@ const myIndexOf = (array, indexOf) => {
 
     return inArray;
 }
-
-// console.log(myIndexOf(myArray, 200))
-// console.log(myIndexOf(myArray, 400))
+console.log("----------indexOf()----------")
+console.log(myIndexOf(myArray, 200))
+console.log(myIndexOf(myArray, 400))
 
 // lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.
 const myLastIndexOf = (array, indexOf) => {
@@ -143,7 +148,8 @@ const myLastIndexOf = (array, indexOf) => {
     
     return inArray;
 }
-// console.log(myLastIndexOf(myArray, 200))
+console.log("----------lastIndexOf()----------")
+console.log(myLastIndexOf(myArray, 200))
 
 // join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
 
@@ -161,8 +167,9 @@ const myJoin = (array, join = ",") => {
 
     return result;
 }
-// console.log(myJoin(myArray))
-// console.log(myJoin(myArray, "--"))
+console.log("----------join()----------")
+console.log(myJoin(myArray))
+console.log(myJoin(myArray, "--"))
 
 // concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
 
@@ -176,7 +183,8 @@ const myConcat = (array, array2) => {
     return result;
 }
 const myArray2 = [4, 5, 6]
-// console.log(myConcat(myArray, myArray2))
+console.log("----------concat()----------")
+console.log(myConcat(myArray, myArray2))
 
 // reduce() method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
 const myArray3= ["a", "b", "c"]
@@ -194,9 +202,9 @@ const myReduce = (array, reducer) => {
 const combine = (a, b) => {
     return a+b;
 }
-
-// console.log(myReduce(myArray, combine))
-// console.log(myReduce(myArray3, combine))
+console.log("----------reduce()----------")
+console.log(myReduce(myArray, combine))
+console.log(myReduce(myArray3, combine))
 
 // reverse() method reverses an array in place. The first array element becomes the last, and the last array element becomes the first.
 const myReverse = (array) => {
@@ -208,5 +216,5 @@ const myReverse = (array) => {
     }
     return result;
 }
-
+console.log("----------reverse()----------")
 console.log(myReverse(myArray3))
